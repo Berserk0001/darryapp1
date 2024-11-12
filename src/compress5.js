@@ -26,7 +26,7 @@ function compress(req, res, input) {
    * |x-bytes-saved  |Saved bandwidth from original photo|OriginSize - Compressed Size|
    */
 
-  input.body.pipe(sharp()
+  input.pipe(sharp()
     .resize(null, 12480, {
         withoutEnlargement: true
       })
