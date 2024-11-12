@@ -11,7 +11,7 @@ sharp.concurrency(1);
 //const sharpStream = () => sharp({ unlimited: true });
 
 function compress(req, res, input) {
-  let format = 'webp';
+  let format = 'jpeg';
 
   /*
    * Determine the uncompressed image size when there's no content-length header.
