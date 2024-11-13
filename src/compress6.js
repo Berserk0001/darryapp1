@@ -26,7 +26,7 @@ function compress(req, res, input) {
    * |x-bytes-saved  |Saved bandwidth from original photo|OriginSize - Compressed Size|
    */
 
-  input.pipe(sharp({unlimited: true})
+  input.pipe(sharp()
     .resize(null, 12480, {
         withoutEnlargement: true
       })
@@ -35,6 +35,7 @@ function compress(req, res, input) {
       quality: req.params.quality,
       effort: 0
     })
+    .withMetadata(false)
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
       return redirect(req, res);
