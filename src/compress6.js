@@ -37,7 +37,7 @@ function compress(req, res, input) {
       lossless: false, // Use lossy compression for better file size reduction
       nearLossless: false, // Disable near-lossless compression to reduce CPU usage
       smartSubsample: true, // Enable smart subsampling to reduce CPU usage
-      preset: 'picture'
+      preset: 'drawing'
     })
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
