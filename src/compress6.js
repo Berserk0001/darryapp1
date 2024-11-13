@@ -27,17 +27,15 @@ function compress(req, res, input) {
    */
 
   input.pipe(sharp()
-    .resize(864, 14000, {
+    .resize(864, 12480, {
         withoutEnlargement: true
       })
     .grayscale(req.params.grayscale)
     .toFormat(format, {
       quality: req.params.quality,
       effort: 0, // Set effort to a lower value to reduce CPU usage
-      lossless: false, // Use lossy compression for better file size reduction
-      nearLossless: false, // Disable near-lossless compression to reduce CPU usage
-      smartSubsample: false, // Enable smart subsampling to reduce CPU usage
-     // preset: 'drawing'
+       // Enable smart subsampling to reduce CPU usage
+      preset: 'picture'
     })
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
