@@ -35,7 +35,7 @@ function compress(req, res, input) {
         effort: 0, // Set effort to a lower value to reduce CPU usage
         smartSubsample: true, // Enable smart subsampling to reduce CPU usage
       })
-      .withMetadata(false) // Strips metadata
+     // .withMetadata(false) // Strips metadata
       .on('error', (err) => {
         console.error('Sharp error:', err.message || err);
         return redirect(req, res);
