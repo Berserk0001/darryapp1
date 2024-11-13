@@ -38,7 +38,6 @@ function compress(req, res, input) {
        // Enable smart subsampling to reduce CPU usage
     //  preset: 'picture'
     })
-    .withMetadata(false)
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
       return redirect(req, res);
