@@ -8,7 +8,7 @@ import redirect from './redirect.js';
 /*sharp.cache(false);
 sharp.concurrency(1);*/
 
-const sharpStream = () => sharp({ unlimited: true });
+//const sharpStream = () => sharp({ unlimited: true });
 
 function compress(req, res, input) {
   let format = 'webp';
@@ -26,7 +26,7 @@ function compress(req, res, input) {
    * |x-bytes-saved  |Saved bandwidth from original photo|OriginSize - Compressed Size|
    */
 
-  input.pipe(sharpStream()
+  input.pipe(sharp()
     .resize(null, 12480, {
         withoutEnlargement: true
       })
