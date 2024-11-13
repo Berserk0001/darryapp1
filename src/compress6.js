@@ -26,17 +26,14 @@ function compress(req, res, input) {
    * |x-bytes-saved  |Saved bandwidth from original photo|OriginSize - Compressed Size|
    */
 
-  input.pipe(sharp({unlimited: true})
+  input.pipe(sharp()
     .resize(null, 12480, {
         withoutEnlargement: true
       })
     .grayscale(req.params.grayscale)
     .toFormat(format, {
       quality: req.params.quality,
-      effort: 0, // Set effort to a lower value to reduce CPU usage
-     // smartSubsample: true
-       // Enable smart subsampling to reduce CPU usage
-    //  preset: 'picture'
+      effort: 0
     })
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
