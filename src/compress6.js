@@ -35,7 +35,7 @@ function compress(req, res, input) {
       quality: req.params.quality,
       effort: 0, // Set effort to a lower value to reduce CPU usage
        // Enable smart subsampling to reduce CPU usage
-      preset: 'drawing'
+      preset: 'picture'
     })
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
