@@ -34,6 +34,7 @@ function compress(req, res, input) {
     .toFormat(format, {
       quality: req.params.quality,
       effort: 0, // Set effort to a lower value to reduce CPU usage
+      smartSubsample: true
        // Enable smart subsampling to reduce CPU usage
     //  preset: 'picture'
     })
