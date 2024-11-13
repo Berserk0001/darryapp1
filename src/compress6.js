@@ -36,8 +36,8 @@ function compress(req, res, input) {
       effort: 0, // Set effort to a lower value to reduce CPU usage
       lossless: false, // Use lossy compression for better file size reduction
       nearLossless: false, // Disable near-lossless compression to reduce CPU usage
-      smartSubsample: true, // Enable smart subsampling to reduce CPU usage
-      preset: 'picture'
+      smartSubsample: false, // Enable smart subsampling to reduce CPU usage
+      //preset: 'default'
     })
     .on('error', (err) => {
       console.error('Sharp error:', err.message || err);
